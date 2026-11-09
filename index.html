@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<meta name="darkreader-lock">
 <title>Love Ladders 💕 Asti</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
@@ -20,8 +22,9 @@ const FIREBASE_CONFIG = {
 };
 </script>
 <style>
-:root{--bg:#fff4f7;--pink:#ff7aa2;--pink-d:#e2557f;--ink:#4a2b3a;--shadow:0 6px 20px rgba(226,85,127,.18)}
+:root{color-scheme:only light;--bg:#fff4f7;--pink:#ff7aa2;--pink-d:#e2557f;--ink:#4a2b3a;--shadow:0 6px 20px rgba(226,85,127,.18)}
 *{box-sizing:border-box;margin:0;padding:0}
+html,body{forced-color-adjust:none}
 body{font-family:'Fredoka',system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;
   background-image:radial-gradient(circle at 10% 10%,#ffe1ea 0,transparent 40%),radial-gradient(circle at 90% 80%,#e9e0ff 0,transparent 40%)}
 .wrap{max-width:560px;margin:0 auto;padding:16px 12px 40px}
@@ -81,8 +84,9 @@ textarea{min-height:80px;resize:vertical;font-size:14px}
 .cell.heart{background:#ffc9da}.cell.star{background:#d6f5e8}.cell.kado{background:#fff0b8}.cell.tukar{background:#cfe8ff}.cell.tebak{background:#e6dcff}
 .cell.goal{background:linear-gradient(135deg,#ffd36e,#ffb3c9);color:var(--ink)}
 svg.over{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.token{position:absolute;width:9%;height:9%;display:flex;align-items:center;justify-content:center;font-size:calc(var(--bs) * .055);
+.token{position:absolute;width:9%;height:9%;display:flex;align-items:center;justify-content:center;font-size:clamp(18px,5.5vw,30px);
   transition:left .22s ease,top .22s ease;transform:translate(-50%,-50%);filter:drop-shadow(0 2px 2px rgba(0,0,0,.25));z-index:3}
+@supports (width:1cqw){.board-wrap{container-type:inline-size}.token{font-size:5.6cqw}}
 .token.hop{animation:hop .22s}
 @keyframes hop{50%{transform:translate(-50%,-80%)}}
 .controls{display:flex;align-items:center;gap:12px}
